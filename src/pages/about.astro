@@ -1,0 +1,20 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumb from "@components/Breadcrumb.astro";
+import { SITE } from "@config";
+const title = "About";
+const description = "All the tags used in posts.";
+---
+
+<Layout title={title} description={description}>
+	<Breadcrumb />
+	<h1><strong>{title} {SITE.title}</strong></h1><!-- use ${SITE.author} to display the Author instead of the Blog Title -->
+	<div class="link-underline-hover-container font-sans-serif-container">
+		<p>
+			Pork chop sausage bacon fatback shankle venison kielbasa bresaola. Kevin ball tip leberkas drumstick buffalo rump porchetta. 
+			Sausage beef ribs ham ribeye tail pork loin. Ball tip jowl tenderloin, turducken cupim kevin spare ribs landjaeger pork meatball. 
+			Landjaeger venison biltong, ground round flank pastrami shoulder chislic ribeye doner brisket short ribs prosciutto jowl beef. 
+			Pig jerky strip steak corned beef chuck swine shank.
+		</p>
+	</div>
+</Layout>

@@ -1,0 +1,17 @@
+---
+import FriendlyDate from '@components/FriendlyDate.astro';
+import { Icon } from 'astro-icon';
+import TagList from "@components/TagList.astro";
+const { date, tags } = Astro.props;
+---
+
+<div class="d-sm-flex align-items-sm-center">
+    <p class="d-flex align-items-center">
+        <Icon class="w-20-px me-2" name="bi:calendar2-plus" />
+        <FriendlyDate date={date} />
+    </p>
+    <div class="d-flex align-items-center mb-3 ms-sm-4">
+        <Icon class="w-20-px me-2" name="bi:tags" />
+        <TagList tags={tags} />
+    </div>
+</div>

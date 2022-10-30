@@ -1,0 +1,27 @@
+---
+import ThemeToggle from '@components/ThemeToggle.astro';
+import NavigationLinks from '@components/NavigationLinks.astro';
+import { SITE, NAVIGATION_SETTINGS } from '@config';
+---
+
+<header class="col-lg-8 offset-lg-2 mb-5 pt-3 pb-2 border-bottom">
+    <nav class="navbar navbar-expand justify-content-between">
+        <div class="d-flex">
+            {
+                NAVIGATION_SETTINGS.showLogo === true && (
+                    <a class="pe-3" href="/">
+                        <img class="theme-light" src="/logo-light.svg" alt="Bootstrap" width="50" height="50">
+                        <img class="theme-dark" src="/logo-dark.svg" alt="Bootstrap" width="50" height="50">
+                    </a>
+                )
+            }
+            <div>
+                <a class="h5" href="/">{SITE.title}</a>
+                <ul class="navbar-nav">
+                    <NavigationLinks />
+                </ul>
+            </div>
+        </div>
+        <ThemeToggle />
+    </nav>
+</header>

@@ -1,0 +1,13 @@
+---
+import PostPreview from "@components/PostPreview.astro";
+const { posts } = Astro.props;
+const heading = Astro.props.heading;
+---
+
+<ul class="list-unstyled">
+	{posts.map((post) => 
+		<li class="mb-5">
+			<PostPreview post={post} heading={heading} />
+		</li>
+	)}
+</ul>

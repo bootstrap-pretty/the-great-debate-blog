@@ -1,0 +1,20 @@
+---
+import { SOCIALS } from "@config";
+import { Icon } from 'astro-icon';
+import { allEqualFalse } from "@scripts/utils"
+const showSocials = SOCIALS.map(social => social.active).every(allEqualFalse)
+---
+
+{
+	showSocials === false && (
+		<ul class="list-inline mb-0 mt-3">
+			{
+				SOCIALS.filter(social => social.active).map(social => (
+					<li class="list-inline-item mt-2">
+						<a href={social.href} title={social.name}><Icon class="w-30-px" name={social.icon} /></a>
+					</li>
+				))
+			}
+		</ul>
+	)
+}

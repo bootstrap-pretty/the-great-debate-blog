@@ -1,0 +1,55 @@
+---
+import ThemeToggleScripts from "@components/ThemeToggleScripts.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { SITE } from '@config'
+import '@styles/styles.scss';
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url, Astro.site);
+const metaTitle = title !== SITE.title ? `${title} | ${SITE.title}` : title;
+---
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href={canonicalURL} />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- General Meta Tags -->
+		<title>{metaTitle}</title>
+		<meta name="title" content={metaTitle} />
+		<meta name="description" content={description} />
+		<meta name="author" content={SITE.author} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content={metaTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<!--<meta property="og:image" content={socialImageURL} />-->
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={metaTitle} />
+		<meta property="twitter:description" content={description} />
+		<!--<meta property="twitter:image" content={socialImageURL} />-->
+
+		<!-- Google Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+		<ThemeToggleScripts />
+	</head>
+	<body class="container-md d-flex flex-column h-100">
+		<Header />
+		<main class="col-lg-8 offset-lg-2 flex-grow-1">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

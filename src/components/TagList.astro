@@ -1,0 +1,10 @@
+---
+const { tags } = Astro.props;
+---
+
+<ul class="list-inline mb-0">
+    {tags.length > 0 && tags.map((tag: string) => 
+    <li class="list-inline-item">
+        <a class="link-underline-hover" href={`/tags/${tag}`} title={tag}>#{tag}</a>
+    </li>)}
+</ul>

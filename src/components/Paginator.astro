@@ -1,0 +1,11 @@
+---
+const { page } = Astro.props;
+import { Icon } from 'astro-icon';
+---
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {page.url.prev ? <li class="page-item"><a class="page-link" href={page.url.prev}><Icon class="w-20-px" name="bi:arrow-left-short" />Previous</a></li> : null}
+        {page.url.next ? <li class="page-item"><a class="page-link" href={page.url.next}>Next<Icon class="w-20-px" name="bi:arrow-right-short" /></a></li> : null}
+    </ul>
+</nav>

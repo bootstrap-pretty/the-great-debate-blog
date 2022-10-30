@@ -1,0 +1,27 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Paginator from "@components/Paginator.astro";
+import PostPreviewList from "@components/PostPreviewList.astro";
+import PageHeader from "@components/PageHeader.astro";
+import { PAGE_SIZE } from '@config';
+
+export async function getStaticPaths({ paginate }) {
+    const allPosts = await Astro.glob('./*.md');
+    const sortedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+
+    return paginate(sortedPosts, {
+      pageSize: PAGE_SIZE
+    });
+}
+
+const { page } = Astro.props;
+const title = "Posts";
+const description = "An archive of all posts.";
+const postPreviewHeading = "h2";
+---
+
+<Layout title={title} description={description}>
+    <PageHeader title={title} description={description} />
+    <PostPreviewList posts={page.data} heading={postPreviewHeading} />
+    <Paginator page={page} />
+</Layout>

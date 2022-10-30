@@ -1,0 +1,92 @@
+// Color system
+// scss-docs-start gray-color-variables
+$white:    #fff;
+$gray-100: #e9eaeb;
+$gray-200: #bec0c5;
+$gray-300: #94969e;
+$gray-400: #696c77;
+$gray-500: #696c77;
+$gray-600: #292d3e;
+$gray-700: #202431;
+$gray-800: #181b25;
+$gray-900: #101218;
+$black:    #000;
+// scss-docs-end gray-color-variables
+
+// scss-docs-start color-variables
+$blue:    #82aaff;
+$indigo:  #c792ea;
+$purple:  #bb80b3;
+$pink:    #ff9cac;
+$red:     #f07178;
+$orange:  #f78c6c;
+$yellow:  #FFCB6B;
+$green:   #c3e88d;
+$teal:    #80CBC4;
+$cyan:    #89ddff;
+// scss-docs-end color-variables
+
+// Prefix for :root CSS variables
+$prefix:                            bs-;
+$custom-prefix:                     bp-;
+
+// Main
+$hr-color:                          var(--#{$custom-prefix}14);
+
+// Fonts
+$font-family-sans-serif:            'Inter', sans-serif;
+$font-family-monospace:             'Roboto Mono', monospace;
+$font-family-base:                  var(--#{$prefix}font-monospace);
+$font-family-code:                  var(--#{$prefix}font-monospace);
+
+// Uncategorized
+$hr-color:                          var(--#{$custom-prefix}13);
+
+// Borders
+$border-color:                      var(--#{$custom-prefix}14);
+
+// Links
+$link-color:                        var(--#{$custom-prefix}9);
+$link-decoration:                   none;
+$link-hover-color:                  var(--#{$custom-prefix}9);
+
+// Buttons
+$btn-link-color:                    var(--#{$custom-prefix}13);
+$btn-link-hover-color:              var(--#{$custom-prefix}9);
+$btn-link-disabled-color:           var(--#{$custom-prefix}13);
+
+// Cards
+$card-bg:                           var(--#{$custom-prefix}12);
+
+// Breadcrumbs
+$breadcrumb-margin-bottom:          1.5rem;
+$breadcrumb-divider-color:          var(--#{$custom-prefix}9);
+$breadcrumb-active-color:           var(--#{$custom-prefix}13);
+$breadcrumb-divider:                quote(">");
+
+// Navbar
+$navbar-light-color:                var(--#{$custom-prefix}13);
+$navbar-light-hover-color:          var(--#{$custom-prefix}9);
+$navbar-light-disabled-color:       var(--#{$custom-prefix}13);
+$navbar-light-active-color:         var(--#{$custom-prefix}9);
+
+// Pagination
+$pagination-color:                  var(--#{$custom-prefix}13);
+$pagination-bg:                     var(--#{$custom-prefix}11);
+$pagination-border-color:           var(--#{$custom-prefix}11);
+
+$pagination-focus-color:            var(--#{$custom-prefix}9);
+$pagination-focus-bg:               var(--#{$custom-prefix}11);
+$pagination-focus-box-shadow:       none;
+
+$pagination-hover-color:            var(--#{$custom-prefix}9);
+$pagination-hover-bg:               var(--#{$custom-prefix}11);
+$pagination-hover-border-color:     var(--#{$custom-prefix}11);
+
+$pagination-active-color:           var(--#{$custom-prefix}9);
+$pagination-active-bg:              var(--#{$custom-prefix}11);
+$pagination-active-border-color:    var(--#{$custom-prefix}11);
+
+$pagination-disabled-color:         var(--#{$custom-prefix}13);
+$pagination-disabled-bg:            var(--#{$custom-prefix}9);
+$pagination-disabled-border-color:  var(--#{$custom-prefix}9);

@@ -1,0 +1,17 @@
+---
+import LayoutBase from '@layouts/LayoutBase.astro';
+import BackButton from '@components/BackButton.astro';
+import PostMetaData from '@components/PostMetaData.astro';
+const { frontmatter } = Astro.props;
+---
+
+<LayoutBase title={frontmatter.title} description={frontmatter.description}>
+	<BackButton />
+	<article>
+		<h1><strong>{frontmatter.title}</strong></h1>
+		<PostMetaData date={frontmatter.date} tags={frontmatter.tags} />
+		<div class="link-underline-hover-container font-sans-serif-container">
+			<slot />
+		</div>
+	</article>
+</LayoutBase>

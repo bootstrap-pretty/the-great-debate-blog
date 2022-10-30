@@ -1,0 +1,7 @@
+---
+import { DateTime } from 'luxon';
+const date = Astro.props.date;
+const friendlyDate = DateTime.fromISO(date).toFormat('ff');
+---
+
+<time datetime={date}>{friendlyDate}</time>

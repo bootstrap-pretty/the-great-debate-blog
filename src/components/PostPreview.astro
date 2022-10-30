@@ -1,0 +1,11 @@
+---
+import PostMetaData from '@components/PostMetaData.astro';
+const { frontmatter: post, url } = Astro.props.post;
+const PostPreviewHeading = Astro.props.heading;
+---
+
+<article>
+    <PostPreviewHeading><a class="link-underline-hover" href={url}>{post.title}</a></PostPreviewHeading>
+    <PostMetaData date={post.date} tags={post.tags} />
+    <p>{post.description}</p>
+</article>
