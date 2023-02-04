@@ -1,0 +1,12 @@
+// Fonts
+$font-family-sans-serif:            "Inter", sans-serif;
+$font-family-monospace:             "Roboto Mono", monospace;
+$font-family-base:                  var(--#{$prefix}font-monospace);
+$font-family-code:                  var(--#{$prefix}font-monospace);
+
+// Breadcrumbs
+$breadcrumb-margin-bottom:          1.5rem;
+$breadcrumb-divider:                quote(">");
+
+// Links
+$link-decoration:                   none;

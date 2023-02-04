@@ -1,27 +1,31 @@
 ---
+import { getCollection, getEntryBySlug } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import PostPreviewList from '@components/PostPreviewList.astro';
 import SocialLinks from '@components/SocialLinks.astro';
-import { HOME_SETTINGS, MAX_SIZE, SITE} from "@config";
+import { HOME_SETTINGS, MAX_SIZE, SITE} from '@config';
 import { Icon } from 'astro-icon';
-const allPosts = await Astro.glob('../pages/posts/*.md');
-const pinnedPosts = allPosts.filter(x => x.frontmatter.tags.includes("featured")).sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
-const recentPosts = allPosts.filter(x => !x.frontmatter.tags.includes("featured")).sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)).slice(0, MAX_SIZE);
-const postPreviewHeading = "h3";
+import getSortedPosts from '@scripts/get-sorted-posts';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = getSortedPosts(allPosts);
+const featuredPosts = sortedPosts.filter(({ data }) => data.tags.includes('featured'));
+const recentPosts = sortedPosts.filter(({ data }) => !data.tags.includes('featured')).slice(0, MAX_SIZE);
+const postPreviewHeading = 'h3';
 ---
 
 <Layout title={SITE.title} description={SITE.description}>
 	{
-		HOME_SETTINGS.showAbout === true && (
+		HOME_SETTINGS.showAbout && (
 			<section class="row mb-5 pb-5 border-bottom">
 				<div class="col-md-3 order-md-2 mb-3 mb-md-0 text-center">
-					<img class="rounded-circle border" src="/author.png" title={SITE.author} alt={SITE.author} width="200" height="200" />
+					<img class="rounded-circle border" src="images/author.png" title={SITE.author} alt={SITE.author} width="200" height="200" />
 				</div>
 				<div class="col-md-9 order-md-1">
 					<p class="lead mb-0">
-						Tri-tip landjaeger sirloin, brisket beef turducken tail. Shankle leberkas drumstick chicken ball tip turkey. 
-						Chicken corned beef shoulder swine short loin pastrami t-bone prosciutto leberkas landjaeger venison. 
-						Buffalo flank chislic beef ribs, tongue shank sausage.
+						Hey, I'm Steph. I wrote this little project to showcase Astro 2.0 Content Collections and Bootstrap Pretty. 
+						Enjoy the hilarious tales told by ChapGPT on various debatable topics in software development. Also, check out the source code and feel 
+						free to add another story or improve the template!
 					</p>
 					<SocialLinks />
 				</div>
@@ -29,10 +33,10 @@ const postPreviewHeading = "h3";
 		)
 	}
 	{
-		pinnedPosts.length && (
+		featuredPosts.length > 0 && (
 			<section class="mb-5">
 				<h2 class="mb-4"><strong>Pinned</strong></h2>
-				<PostPreviewList posts={pinnedPosts} heading={postPreviewHeading} />
+				<PostPreviewList posts={featuredPosts} heading={postPreviewHeading} />
 			</section>
 		)
 	}

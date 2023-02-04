@@ -1,17 +1,26 @@
 ---
 import FriendlyDate from '@components/FriendlyDate.astro';
+import TagList from '@components/TagList.astro';
 import { Icon } from 'astro-icon';
-import TagList from "@components/TagList.astro";
-const { date, tags } = Astro.props;
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
 ---
 
-<div class="d-sm-flex align-items-sm-center">
-    <p class="d-flex align-items-center">
-        <Icon class="w-20-px me-2" name="bi:calendar2-plus" />
-        <FriendlyDate date={date} />
+<div class="d-sm-flex align-items-sm-center small">
+    <p class="d-flex align-items-center mb-0">
+        <Icon class="w-15-px me-2" name="bi:person" />
+        <span>Written by {post.data.author}</span>
     </p>
-    <div class="d-flex align-items-center mb-3 ms-sm-4">
-        <Icon class="w-20-px me-2" name="bi:tags" />
-        <TagList tags={tags} />
-    </div>
+    <p class="d-flex align-items-center ms-sm-4 mb-0">
+        <Icon class="w-15-px me-2" name="bi:calendar2-plus" />
+        <FriendlyDate post={post} />
+    </p>
+</div>
+<div class="d-flex align-items-center mb-3 small">
+    <Icon class="w-15-px me-2" name="bi:tags" />
+    <TagList tags={post.data.tags} />
 </div>

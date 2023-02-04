@@ -1,13 +1,21 @@
 ---
-import PostPreview from "@components/PostPreview.astro";
+import PostPreview from '@components/PostPreview.astro';
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+	heading: string;
+	posts: CollectionEntry<'blog'>[];
+}
+
 const { posts } = Astro.props;
 const heading = Astro.props.heading;
 ---
 
 <ul class="list-unstyled">
-	{posts.map((post) => 
-		<li class="mb-5">
-			<PostPreview post={post} heading={heading} />
-		</li>
-	)}
+	{
+		posts.map(post => 
+			<li class="mb-5">
+				<PostPreview post={post} heading={heading} />
+			</li>
+		)
+	}
 </ul>

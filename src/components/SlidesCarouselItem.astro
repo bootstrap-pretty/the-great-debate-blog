@@ -1,0 +1,9 @@
+---
+const { isActive } = Astro.props;
+---
+
+<div class={`carousel-item ${isActive}`}>
+    <div class="ratio ratio-16x9">
+        <slot />
+    </div>
+</div>

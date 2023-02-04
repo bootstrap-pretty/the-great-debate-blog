@@ -1,0 +1,21 @@
+body {
+    background-image: url("/images/waves.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.carousel-inner {
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, .71);
+}
+
+.carousel-control-next {
+    right: -10%;
+}
+
+.carousel-control-prev {
+    left: -10%;
+}
+
+.carousel-indicators {
+    bottom: -10%;
+}

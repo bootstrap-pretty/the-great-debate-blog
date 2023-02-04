@@ -1,0 +1,54 @@
+---
+import { SITE } from '@config'
+import '@styles/styles.scss';
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url, Astro.site);
+const metaTitle = title !== SITE.title ? `${title} | ${SITE.title}` : title;
+const socialImageURL = new URL(`/share-og.png`, Astro.site);
+---
+
+<!DOCTYPE html>
+<html class="h-100" lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="canonical" href={canonicalURL} />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- General Meta Tags -->
+		<title>{metaTitle}</title>
+		<meta name="title" content={metaTitle} />
+		<meta name="description" content={description} />
+		<meta name="author" content={SITE.author} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content={metaTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={socialImageURL} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={metaTitle} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={socialImageURL} />
+
+		<!-- Google Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="container-md d-flex flex-column h-100 overflow-hidden">
+		<main class="my-auto">
+			<slot />
+		</main>
+		<script>
+			import '@scripts/index';
+		</script>
+	</body>
+</html>

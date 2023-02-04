@@ -1,17 +1,20 @@
 ---
-import ThemeToggle from '@components/ThemeToggle.astro';
 import NavigationLinks from '@components/NavigationLinks.astro';
+import ThemeToggle from 'bootstrap-pretty/components/astro/ThemeToggle.astro';
 import { SITE, NAVIGATION_SETTINGS } from '@config';
+import { Icon } from 'astro-icon';
+
+const iconComponent = Icon;
 ---
 
 <header class="col-lg-8 offset-lg-2 mb-5 pt-3 pb-2 border-bottom">
     <nav class="navbar navbar-expand justify-content-between">
         <div class="d-flex">
             {
-                NAVIGATION_SETTINGS.showLogo === true && (
+                NAVIGATION_SETTINGS.showLogo && (
                     <a class="pe-3" href="/">
-                        <img class="theme-light" src="/logo-light.svg" alt="Bootstrap" width="50" height="50">
-                        <img class="theme-dark" src="/logo-dark.svg" alt="Bootstrap" width="50" height="50">
+                        <img class="theme-light" src="/logo-light.png" alt={SITE.title} width="50" height="50">
+                        <img class="theme-dark" src="/logo-dark.png" alt={SITE.title} width="50" height="50">
                     </a>
                 )
             }
@@ -22,6 +25,6 @@ import { SITE, NAVIGATION_SETTINGS } from '@config';
                 </ul>
             </div>
         </div>
-        <ThemeToggle />
+        <ThemeToggle iconComponent={iconComponent} />
     </nav>
 </header>

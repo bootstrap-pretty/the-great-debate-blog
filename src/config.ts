@@ -1,10 +1,10 @@
 export const SITE = {
     author: "Steph Hays",
-    title: 'Astro Bootstrap Blog',
-    description: 'An SEO driven, responsive, and fully customizable blog template built with Astro.',
+    title: 'The Great Debate Blog',
+    description: 'An SEO driven, responsive, and fully customizable blog template built with Astro and Bootstrap Pretty.',
     url: import.meta.env.SITE,
-    gitHubUrl: 'https://github.com/st3phhays/astro-bootstrap-blog',
-    shikiTheme: 'material-palenight'
+    gitHubUrl: 'https://github.com/bootstrap-pretty/the-great-debate-blog',
+    shikiTheme: 'dracula'
 };
 
 export const NAVIGATION_LINKS = [
@@ -40,6 +40,18 @@ export const HOME_SETTINGS = {
 
 export const SOCIALS = [
     {
+      name: "Slides",
+      icon: "bi:easel",
+      href: '/slides',
+      active: true,
+    },
+    {
+      name: "Portfolio",
+      icon: "bi:link-45deg",
+      href: 'https://stephhays.dev',
+      active: true,
+    },
+    {
       name: "GitHub",
       icon: "bi:github",
       href: SITE.gitHubUrl,
@@ -48,26 +60,26 @@ export const SOCIALS = [
     {
       name: "Facebook",
       icon: "bi:facebook",
-      href: SITE.gitHubUrl,
-      active: true
+      href: "",
+      active: false
     },
     {
       name: "Instagram",
       icon: "bi:instagram",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "LinkedIn",
       icon: "bi:linkedin",
-      href: SITE.gitHubUrl,
+      href: "https://www.linkedin.com/in/st3phhays",
       active: true,
     },
     {
       name: "Mail",
       icon: "bi:envelope",
-      href: `${SITE.url}contact`,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "Twitter",
@@ -84,32 +96,32 @@ export const SOCIALS = [
     {
       name: "YouTube",
       icon: "bi:youtube",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "WhatsApp",
       icon: "bi:whatsapp",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "Snapchat",
       icon: "bi:snapchat",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "Pinterest",
       icon: "bi:pinterest",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "TikTok",
       icon: "bi:tiktok",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "CodePen",
@@ -120,40 +132,40 @@ export const SOCIALS = [
     {
       name: "Discord",
       icon: "bi:discord",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "GitLab",
       icon: "fa-brands:gitlab",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "Reddit",
       icon: "bi:reddit",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "Skype",
       icon: "bi:skype",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "Steam",
       icon: "bi:steam",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     },
     {
       name: "Telegram",
       icon: "bi:telegram",
-      href: SITE.gitHubUrl,
-      active: true,
+      href: "",
+      active: false
     }
 ];
 
-export const PAGE_SIZE = 1;
+export const PAGE_SIZE = 5;
 export const MAX_SIZE = 5;

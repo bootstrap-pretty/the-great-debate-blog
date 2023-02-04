@@ -20,6 +20,9 @@ pnpm-debug.log*
 !.yarn/sdks
 !.yarn/versions
 
+# Astro
+.astro/*
+
 # environment variables
 .env
 .env.production

@@ -1,0 +1,113 @@
+---
+import LayoutSlides from '@layouts/LayoutSlides.astro';
+import SlidesCarouselItem from '@components/SlidesCarouselItem.astro';
+import { SITE } from '@config';
+import '@styles/slides.scss';
+
+const title = 'Slides';
+const description = 'Presentation slides for the devICT meetup.';
+---
+
+<LayoutSlides title={title} description={description}>
+    <section class="container">
+        <div id="carouselSlides" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselSlides" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselSlides" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselSlides" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselSlides" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselSlides" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselSlides" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselSlides" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carouselSlides" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            </div>
+            <div class="carousel-inner rounded bg-body">
+                <SlidesCarouselItem isActive="active">
+                    <div class="d-flex align-items-center justify-content-center p-5">
+                        <div>
+                            <h1 class="display-3 text-center mb-5 text-primary"><strong>Hi, I'm Steph.</strong></h1>
+                            <ul class="h3">
+                                <li class="mb-4">In Software Development for around 9 years</li>
+                                <li class="mb-4">Senior Software Engineer at Chocolatey Software</li>
+                                <li>Two crazy kids and a husband</li>
+                            </ul>
+                        </div>
+                        <div class="ms-5">
+                            <img src="/images/qr-code.png" title="QR Code" alt="QR Code" width="600" height="600" />
+                        </div>
+                    </div>
+                </SlidesCarouselItem>
+                <SlidesCarouselItem>
+                    <h1 class="display-3 text-center pt-5 mb-5"><strong>Currently Learning:</strong></h1>
+                    <div class="d-flex align-items-center justify-content-center p-5 mt-5">
+                        <div>
+                            <img src="/images/astro-logo.svg" title="Astro" alt="Astro" width="450" />
+                        </div>
+                        <div>
+                            <img src="/images/typescript-logo.svg" title="TypeScript" alt="TypeScript" width="350" />
+                        </div>
+                    </div>
+                </SlidesCarouselItem>
+                <SlidesCarouselItem>
+                    <div class="d-flex flex-column align-items-center justify-content-center p-5">
+                        <a href="https://the-great-debate-blog.netlify.app/" target="_blank" rel="noreferrer"><img src="/logo-dark.png" title={SITE.title} alt={SITE.title} height="200" width="200" /></a>
+                        <h1 class="display-3"><strong>The Great Debate Blog</strong></h1>
+                        <h2 class="display-5 text-primary mb-0"><strong>Building a Blog with Astro 2.0</strong></h2>
+                    </div>
+                </SlidesCarouselItem>
+                <SlidesCarouselItem>
+                    <div class="d-flex flex-column align-items-center justify-content-center p-5">
+                        <a class="display-1 text-primary" href="https://docs.astro.build/en/core-concepts/project-structure/" target="_blank" rel="noreferrer"><strong>Project Structure</strong></a>
+                    </div>
+                </SlidesCarouselItem>
+                <SlidesCarouselItem>
+                    <div class="d-flex flex-column align-items-center justify-content-center p-5">
+                        <h1 class="display-1 text-primary mb-5"><strong>Astro Components</strong></h1>
+                        <figure class="w-75 mx-auto">
+                            <blockquote class="blockquote">
+                                <p class="h3">
+                                    "Astro component syntax is a superset of HTML. 
+                                    The syntax was designed to feel familiar to anyone with experience writing HTML or JSX, 
+                                    and adds support for including components and JavaScript expressions. 
+                                    You can spot an Astro component by its file extension: <code>.astro</code>."
+                                </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer mt-4">
+                                <cite class="lead" title="Source Title"><a href="https://docs.astro.build/en/core-concepts/astro-components/" target="_blank" rel="noreferrer">The Astro Docs</a></cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </SlidesCarouselItem>
+                <SlidesCarouselItem>
+                    <div class="d-flex flex-column align-items-center justify-content-center p-5">
+                        <a class="display-1 text-primary" href="https://docs.astro.build/en/guides/content-collections/" target="_blank" rel="noreferrer"><strong>Content Collections</strong></a>
+                    </div>
+                </SlidesCarouselItem>
+                <SlidesCarouselItem>
+                    <div class="d-flex flex-column align-items-center justify-content-center p-5">
+                        <a class="display-1 text-primary" href="https://astro.build/integrations/" target="_blank" rel="noreferrer"><strong>Integrations</strong></a>
+                    </div>
+                </SlidesCarouselItem>
+                <SlidesCarouselItem>
+                    <div class="d-flex flex-column align-items-center justify-content-center p-5">
+                        <img src="/images/qr-code.png" title="QR Code" alt="QR Code" width="400" height="400" />
+                        <h1 class="display-1 text-primary mt-5"><strong>Questions?</strong></h1>
+                    </div>
+                </SlidesCarouselItem>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlides" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSlides" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <script>
+        if (window.innerWidth < 1200) {
+            alert("Slides are best viewed on screens 1200 pixels or greater, sorry!");
+        }
+    </script>
+</LayoutSlides>

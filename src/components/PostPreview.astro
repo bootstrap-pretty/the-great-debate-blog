@@ -1,11 +1,18 @@
 ---
 import PostMetaData from '@components/PostMetaData.astro';
-const { frontmatter: post, url } = Astro.props.post;
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+    heading: string;
+    post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
 const PostPreviewHeading = Astro.props.heading;
+
 ---
 
 <article>
-    <PostPreviewHeading><a class="link-underline-hover" href={url}>{post.title}</a></PostPreviewHeading>
-    <PostMetaData date={post.date} tags={post.tags} />
-    <p>{post.description}</p>
+    <PostPreviewHeading><a class="link-underline-hover" href={`/posts/${post.slug}`}>{post.data.title}</a></PostPreviewHeading>
+    <PostMetaData post={post} />
+    <p>{post.data.description}</p>
 </article>

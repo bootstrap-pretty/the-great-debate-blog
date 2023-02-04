@@ -1,7 +1,18 @@
 ---
-import { DateTime } from 'luxon';
-const date = Astro.props.date;
-const friendlyDate = DateTime.fromISO(date).toFormat('ff');
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const friendlyDate = post.data.pubDate.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true
+});
 ---
 
-<time datetime={date}>{friendlyDate}</time>
+<time datetime={post.data.pubDate.toString()}>{friendlyDate}</time>

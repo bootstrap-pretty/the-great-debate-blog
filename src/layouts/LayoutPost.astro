@@ -2,15 +2,20 @@
 import LayoutBase from '@layouts/LayoutBase.astro';
 import BackButton from '@components/BackButton.astro';
 import PostMetaData from '@components/PostMetaData.astro';
-const { frontmatter } = Astro.props;
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+    post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
 ---
 
-<LayoutBase title={frontmatter.title} description={frontmatter.description}>
+<LayoutBase title={post.data.title} description={post.data.description}>
 	<BackButton />
-	<article>
-		<h1><strong>{frontmatter.title}</strong></h1>
-		<PostMetaData date={frontmatter.date} tags={frontmatter.tags} />
-		<div class="link-underline-hover-container font-sans-serif-container">
+	<article class="mt-3">
+		<h1><strong>{post.data.title}</strong></h1>
+		<PostMetaData post={post} />
+		<div class="link-underline-hover-container font-sans-serif-container mt-5">
 			<slot />
 		</div>
 	</article>
