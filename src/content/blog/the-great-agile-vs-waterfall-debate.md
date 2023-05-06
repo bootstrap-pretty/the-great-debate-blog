@@ -1,5 +1,5 @@
 ---
-title: The Great Agile vs. Waterfall Development Debate
+title: My first blog
 description: A hilarious tale of two software developers arguing over which development method is better.
 pubDate: 2022-03-08T04:30:00Z
 tags: ['software development', 'agile', 'waterfall']

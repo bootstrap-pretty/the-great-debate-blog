@@ -1,9 +1,9 @@
 export const SITE = {
-    author: "Steph Hays",
-    title: 'The Great Debate Blog',
-    description: 'An SEO driven, responsive, and fully customizable blog template built with Astro and Bootstrap Pretty.',
+    author: "AphexDad",
+    title: 'AphexDad Blog',
+    description: 'The blog about AphexDad.',
     url: import.meta.env.SITE,
-    gitHubUrl: 'https://github.com/bootstrap-pretty/the-great-debate-blog',
+    gitHubUrl: 'https://github.com/aphexdad/blog',
     shikiTheme: 'dracula'
 };
 
