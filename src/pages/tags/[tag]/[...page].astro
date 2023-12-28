@@ -12,7 +12,7 @@ export async function getStaticPaths({ paginate }) {
     allPosts.map(post => {
         post.data.tags && post.data.tags.map(tag => allTags.add(tag.toLowerCase()))
     })
-    return Array.from(allTags).map((tag) => {
+    return Array.from(allTags).flatMap((tag) => {
         const filteredPosts = allPosts.filter(({ data }) => data.tags.includes(tag));
         return paginate(filteredPosts, {
             params: { tag },
