@@ -40,12 +40,6 @@ export const HOME_SETTINGS = {
 
 export const SOCIALS = [
     {
-      name: "Slides",
-      icon: "bi:easel",
-      href: '/slides',
-      active: true,
-    },
-    {
       name: "Portfolio",
       icon: "bi:link-45deg",
       href: 'https://stephhays.dev',

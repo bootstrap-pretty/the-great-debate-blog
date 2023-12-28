@@ -11,11 +11,7 @@ const showSocials = SOCIALS.every(social => !social.active);
 			{
 				SOCIALS.filter(social => social.active).map(social => (
 					<li class="list-inline-item mt-2">
-						{
-							social.name === "Slides" ?
-							<button class="btn btn-link p-0" title={social.name} onclick='window.open("/slides", "detab", "toolbar=0,location=0,status=0,menubar=0,titlebar=0,fullscreen=1")'><Icon style="width:30px !important; height: 30px !important;" name={social.icon} /></button> :
-							<a href={social.href} title={social.name} target="_blank" rel="noreferrer"><Icon class="w-30-px" name={social.icon} /></a>
-						}
+						<a href={social.href} title={social.name} target="_blank" rel="noreferrer"><Icon class="w-30-px" name={social.icon} /></a>
 					</li>
 				))
 			}
